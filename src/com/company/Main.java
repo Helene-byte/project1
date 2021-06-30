@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.company.Occupation.CEO;
 
@@ -49,7 +50,10 @@ public class Main {
 ////  Выведите все елементы первого списка, которых нет во втором
             String[] l1 = {"White", "Black", "Red"};
             String[] l2 = {"Red", "Green"};
-            List<String> resultArray = ;
+            List<String> list1 = new ArrayList(Arrays.asList(l1));
+            List<String> list2 = new ArrayList(Arrays.asList(l2));
+
+            List<String> resultArray = Stream.concat(list1.stream(), list2.stream()).distinct().filter(s->list1.contains(s)).collect(Collectors.toList());
             System.out.println("\nEлементы первого списка, которых нет во втором "+resultArray);
 ////Отсортировать список словарей по ключу 'x'
 //            //    l = ["x": 4}, {"x": 2}, {"x": 1}, {"x": 3}]
