@@ -53,32 +53,23 @@ public class Main {
             List<String> list1 = new ArrayList(Arrays.asList(l1));
             List<String> list2 = new ArrayList(Arrays.asList(l2));
 
-            List<String> resultArray = Stream.concat(list1.stream(), list2.stream()).distinct().filter(s->list1.contains(s)).collect(Collectors.toList());
+            List<String> resultArray = Stream.concat(list1.stream(), list2.stream()).distinct().collect(Collectors.toList());
             System.out.println("\nEлементы первого списка, которых нет во втором "+resultArray);
 ////Отсортировать список словарей по ключу 'x'
 //            //    l = ["x": 4}, {"x": 2}, {"x": 1}, {"x": 3}]
 //
 //
 ////Вывести все уникальные имена из листа, результат должен быть в апперкейсе. пример: ["PETER","PAUL","STEVE"]
-//            public class HelloWorld{
-//                public static void main(String []args){
-//                    List<PersonAge> personList = new ArrayList<>();
-//                    personList.add(new PersonAge("Peter", "Patterson", 21));
-//                    personList.add(new PersonAge("Paul", "Walker", 31));
-//                    personList.add(new PersonAge("Steve", "Runner", 41));
-//                    personList.add(new PersonAge("Arnold", "", -1));
-//                    personList.add(new PersonAge(" ", "Stevenson", 19));
-//                    personList.add(new PersonAge("Arnold", "Stevenson", 19));
-//                    personList.add(null);
-//                    personList.add(new PersonAge("Aaron", "Bortnicker", 18));
-//                }
-//            }
-
-
-
-
-
-
-
+                    List<PersonAge> personList = new ArrayList<>();
+                    personList.add(new PersonAge("Peter", "Patterson", 21));
+                    personList.add(new PersonAge("Paul", "Walker", 31));
+                    personList.add(new PersonAge("Steve", "Runner", 41));
+                    personList.add(new PersonAge("Arnold", "", -1));
+                    personList.add(new PersonAge(" ", "Stevenson", 19));
+                    personList.add(new PersonAge("Arnold", "Stevenson", 19));
+                    personList.add(null);
+                    personList.add(new PersonAge("Aaron", "Bortnicker", 18));
+                }
+            }
         }
 }
