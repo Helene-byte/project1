@@ -33,22 +33,22 @@ public class Main {
                     .collect(Collectors.toMap(e -> e, e -> team.stream().filter(s -> s.getOccupation() == e).collect(Collectors.toList())));
 
             positions.forEach((occupation, team_members) -> System.out.println(occupation + ": " + team_members));
-//// Удалить из списка все дублирующиеся значения (оставить только уникальные)
+//// task 4- Удалить из списка все дублирующиеся значения (оставить только уникальные)
             Integer numbers[] = {1, 2, 5, 3, 5, 2, 1, 1, 4, 7, 3, 2};
             Set<Integer> uniqueNumbers = new HashSet<>(Arrays.asList(numbers));
 
             System.out.println("\nУникальные значения " + uniqueNumbers);
-//// Сделать реверс числа (из 12345 в 54321)  num = 12345
+//// task 5 - Сделать реверс числа (из 12345 в 54321)  num = 12345
             int num = 12345;
             StringBuilder sb = new StringBuilder();
             sb.append(num);
             sb = sb.reverse();
             num = Integer.parseInt(sb.toString());
             System.out.println("\nРеверс числа 12345 = " + num);
-//// Скопировать структуру из d1 в d2.
+//// task 6 - Скопировать структуру из d1 в d2.
             //d1 = {"data": {"number": 1}}
             //d2 = d1.clone
-////  Выведите все елементы первого списка, которых нет во втором
+//// task 7 - Выведите все елементы первого списка, которых нет во втором
             String[] l1 = {"White", "Black", "Red"};
             String[] l2 = {"Red", "Green"};
             List<String> list1 = new ArrayList(Arrays.asList(l1));
@@ -57,11 +57,11 @@ public class Main {
             list1.removeAll(list2);
             List<String> resultArray = list1;
             System.out.println("\nEлементы первого списка, которых нет во втором " + resultArray);
-////Отсортировать список словарей по ключу 'x'
+//// task 8 - Отсортировать список словарей по ключу 'x'
 //            //    l = ["x": 4}, {"x": 2}, {"x": 1}, {"x": 3}]
+//            //   newL = sorted(l, key=lambda k: k['x']
 //
-//
-////Вывести все уникальные имена из листа, результат должен быть в апперкейсе. пример: ["PETER","PAUL","STEVE"]
+////task 9 - Вывести все уникальные имена из листа, результат должен быть в апперкейсе. пример: ["PETER","PAUL","STEVE"]
             List<PersonAge> personList = new ArrayList<>();
             personList.add(new PersonAge("Peter", "Patterson", 21));
             personList.add(new PersonAge("Peter", "Patterson", 21));
@@ -75,7 +75,7 @@ public class Main {
 
 
             List<String>uniqueName = personList.stream()
-                    .filter(s->s!=null && s.getName()!=" ")
+                    .filter(s->s!=null)
                     .map(s->s.getName().toUpperCase())
                     .distinct()
                     .collect(Collectors.toList());
