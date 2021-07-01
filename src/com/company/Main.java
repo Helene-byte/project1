@@ -76,7 +76,7 @@ public class Main {
 
 
             List<String>uniqueName = personList.stream()
-                    .filter(s->s!=null && s.getName()!=" ")
+                    .filter(s->s!=null)
                     .map(s->s.getName().toUpperCase())
                     .filter(s->!s.trim().isEmpty())
                     .distinct()
