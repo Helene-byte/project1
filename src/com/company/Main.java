@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,6 +64,7 @@ public class Main {
 ////Вывести все уникальные имена из листа, результат должен быть в апперкейсе. пример: ["PETER","PAUL","STEVE"]
             List<PersonAge> personList = new ArrayList<>();
             personList.add(new PersonAge("Peter", "Patterson", 21));
+            personList.add(new PersonAge("Peter", "Patterson", 21));
             personList.add(new PersonAge("Paul", "Walker", 31));
             personList.add(new PersonAge("Steve", "Runner", 41));
             personList.add(new PersonAge("Arnold", "", -1));
@@ -72,5 +74,11 @@ public class Main {
             personList.add(new PersonAge("Aaron", "Bortnicker", 18));
 
 
+            List<String>uniqueName = personList.stream()
+                    .filter(s->s!=null && s.getName()!=" ")
+                    .map(s->s.getName().toUpperCase())
+                    .distinct()
+                    .collect(Collectors.toList());
+            System.out.println("Unique name" + uniqueName);
     }
 }
