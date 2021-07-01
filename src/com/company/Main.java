@@ -68,7 +68,8 @@ public class Main {
             personList.add(new PersonAge("Paul", "Walker", 31));
             personList.add(new PersonAge("Steve", "Runner", 41));
             personList.add(new PersonAge("Arnold", "", -1));
-            personList.add(new PersonAge(" ", "Stevenson", 19));
+            personList.add(new PersonAge("   ", "Stevenson", 19));
+            personList.add(new PersonAge("      ", "Stevenson", 19));
             personList.add(new PersonAge("Arnold", "Stevenson", 19));
             personList.add(null);
             personList.add(new PersonAge("Aaron", "Bortnicker", 18));
@@ -77,6 +78,7 @@ public class Main {
             List<String>uniqueName = personList.stream()
                     .filter(s->s!=null && s.getName()!=" ")
                     .map(s->s.getName().toUpperCase())
+                    .filter(s->!s.trim().isEmpty())
                     .distinct()
                     .collect(Collectors.toList());
             System.out.println("Unique name" + uniqueName);
