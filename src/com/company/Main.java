@@ -75,7 +75,7 @@ public class Main {
 
 
             List<String>uniqueName = personList.stream()
-                    .filter(s->s!=null)
+                    .filter(s->s!=null && s.getName()!=" ")
                     .map(s->s.getName().toUpperCase())
                     .distinct()
                     .collect(Collectors.toList());
